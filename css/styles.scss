@@ -3,6 +3,7 @@ $lt-gray:#ddd;
 $background-dark:#512DA8;
 $background-light:#9575cd;
 $background-pale:#d1c4e9;
+$modalHeader-and-closeButton-text-color:floralwhite;
 
 
 //Height Values
@@ -75,3 +76,17 @@ body {
     position: absolute;
     bottom: 0px;
 }
+
+
+.modal-header{
+    background-color:$background-dark;
+    color: $modalHeader-and-closeButton-text-color;
+  }
+  
+  .close{
+    color: $modalHeader-and-closeButton-text-color;
+  
+  }
+  .modal-body{
+    background-color:$background-light;
+  }

@@ -30,7 +30,7 @@
                     <li class="nav-item"><a class="nav-link" href="./contactus.html"><span class="fa fa-address-card fa-lg"></span> Contact</a></li>
                 </ul>
                 <span class="navbar-text">
-                    <a data-toggle="modal" data-target="#loginModal">
+                    <a id="loginLink">
                         <span class="fa fa-sign-in"></span>Login
                     </a>
                 </span>
@@ -38,7 +38,7 @@
         </div>
     </nav>
 
-    <div class="modal fade" id="loginModal" role="dialog">
+    <div class="modal fade" id="login-modal" role="dialog">
         <div class="modal-dialog modal-lg" role="content">
             <div class="modal-content">
                 <div class="modal-header">
@@ -87,7 +87,7 @@
                     <img src="img/logo.png" class="img-fluid">
                 </div>
                 <div class="col-12 col-sm align-self-center">
-                    <a data-target="#reservationModal"  class="btn btn-warning btn-block" data-toggle="modal">
+                    <a  id="reservationLink"  class="btn btn-warning btn-block">
                         Reserve Table</a>
                 </div>
             </div>
@@ -191,10 +191,10 @@
         </div>
     </div>
 </div>
-<div class="modal fade" id="reservationModal" role="dialog">
+<div class="modal fade" id="reservation-modal" role="dialog">
         <div class="modal-dialog modal-lg" role="content">
         <div class="modal-content">
-        <h3 class="modal-header">Reserve a Table<button type="button" class="close" data-dismiss="modal">&times;</button></h3>
+        <h3 class=" m-0 modal-header">Reserve a Table<button type="button" class="close" data-dismiss="modal">&times;</button></h3>
         <div class="modal-body">
           <form>
             <div class="form-group row">
@@ -325,6 +325,21 @@
 
         });
     })
+</script>
+<script>
+    $(document).ready(function(){
+        $('#loginLink').click(function(){
+            $('#login-modal').modal('toggle')
+        
+        });});
+
+        $(document).ready(function(){
+            $('#reservationLink').click(function(){
+                $('#reservation-modal').modal('toggle')
+            
+            });});
+
+
 </script>
 </body>
 
