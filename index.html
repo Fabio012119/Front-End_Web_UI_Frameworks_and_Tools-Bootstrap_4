@@ -87,7 +87,7 @@
                     <img src="img/logo.png" class="img-fluid">
                 </div>
                 <div class="col-12 col-sm align-self-center">
-                    <a href="#reservation" role="button"  class="btn btn-warning btn-block" data-toggle="tooltip" data-html="true" title="Or Call us at <br><strong>+852 12345678</strong>" data-placement="bottom">
+                    <a data-target="#reservationModal"  class="btn btn-warning btn-block" data-toggle="modal">
                         Reserve Table</a>
                 </div>
             </div>
@@ -188,11 +188,11 @@
         </div>
     </div>
 </div>
-<div class="row row-content justify-content-center"  id="reservation">
-    <div class="col-8 col-sm-6">
-      <div class="card">
-        <h3 class="card-header bg-warning text-white">Reserve a Table</h3>
-        <div class="card-body">
+<div class="modal fade" id="reservationModal" role="dialog">
+        <div class="modal-dialog modal-lg" role="content">
+        <div class="modal-content">
+        <h3 class="modal-header">Reserve a Table<button type="button" class="close" data-dismiss="modal">&times;</button></h3>
+        <div class="modal-body">
           <form>
             <div class="form-group row">
                 <label class="col-12 col-sm-2">Number of Guests</label>
@@ -224,6 +224,19 @@
                 </div>
             </div>
             <div class="form-group row">
+                <label class="col-12 col-sm-2">Section</label>
+                <div class="col-12 col-sm-4">
+                  <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                    <label class="btn btn-success active">
+                      <input type="radio" name="section" value="non_smoking" id="non_smoking" autocomplete="off" checked>Non-Smoking
+                    </label>
+                    <label class="btn btn-danger">
+                      <input type="radio" name="section" value="smoking" id="smoking" autocomplete="off">Smoking
+                    </label>
+                  </div>
+                </div>
+              </div>
+            <div class="form-group row">
               <label class="col-12 col-sm-2">Date and Time</label>
               <div class="col-12 col-sm-4">
                 <input type="date-text" class="form-control" id="date" placeholder="Date">
@@ -234,10 +247,14 @@
             </div>
             <div class="form-group row">
               <div class="col offset-0 offset-sm-2">
-                <button type="submit" class="btn btn-primary">Reserve</button>
+                <div class="form-check form-check-inline">
+                    <button type="button" class="btn btn-secondary btn-sm ml-auto" data-dismiss="modal">Cancel</button>
+                    <button type="submit" class="btn btn-primary btn-sm ml-1">Reserve</button>        
+                </div>
               </div>
             </div>
-
+          </form>
+        </div>
         </div>
     </div>
   </div>
@@ -288,11 +305,6 @@
 <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
 <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
 <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-<script>
-    $(document).ready(function(){
-        $('[data-toggle="tooltip"]').tooltip();
-    });
-</script>
 </body>
 
 </html>
